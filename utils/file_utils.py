@@ -3,8 +3,7 @@ import logging
 
 
 class File():
-
-    def __int__(self, file_path):
+    def __init__(self, file_path):
         self.file_path = file_path
         self.file_hash_md5 = ''
         self.file_content = ''
