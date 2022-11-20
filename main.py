@@ -1,6 +1,8 @@
 import argparse
-import hashlib
+import logging
 import os
+
+from utils.log_utils import setup_logger
 
 
 def compare_file_content(source_path, replica_path):
