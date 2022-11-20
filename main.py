@@ -26,8 +26,8 @@ def get_files_of_dir(dir_path):
     file_list = get_content_of_dir(dir_path)
 
     for element in file_list:
-        if os.path.isdir(f'{dir_path}{element}'):
-            file_list.remove(element)
+        if os.path.isfile(f'{dir_path}{element}'):
+            logging.debug(f'File: {element}')
 
     return [f'{dir_path}{file}' for file in file_list]
 
