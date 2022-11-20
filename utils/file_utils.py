@@ -3,8 +3,10 @@ import logging
 
 
 class File():
-    def __init__(self, file_path):
+    def __init__(self, file_path: str, dir_path: str):
         self.file_path = file_path
+        self.dir_path = dir_path
+        self.file_name = file_path.replace(dir_path, '')
         self.file_hash_md5 = ''
         self.file_content = ''
 
@@ -32,7 +34,7 @@ class File():
         if not self.file_hash_md5:
             self.calculate_file_hash()
 
-        logging.debug(f'File:{self.file_path} hash code MD5:{self.file_hash_md5}')
+        logging.debug(f'File:{self.file_path} MD5:{self.file_hash_md5}')
 
         return self.file_hash_md5
 
