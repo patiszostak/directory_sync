@@ -55,8 +55,9 @@ def parse_arguments():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    sync_path = '/\\source\\'
+
+    setup_logger()
+
+    sync_path = 'C:\\Users\\patrycja.szostak\\Desktop\\PYTHON\\dir_sync\\source\\'
     files = get_files_of_dir(sync_path)
-    for file in files:
-        print(file)
-    pass
+
