@@ -29,21 +29,11 @@ def get_files_of_dir(dir_path):
 
     return [f'{dir_path}{file}' for file in file_list]
 
-
-def get_file_hash(file_content) -> str:
-    ''' Returns MD5 sum for given content'''
-    hash_code = hashlib.md5(file_content).hexdigest()
-    return hash_code
+def get_files_with_hash(dir_path):
+    ''' Returns list of obj of content in directory '''
+    list_of_files = get_files_of_dir(dir_path)
 
 
-def read_file_content(source_path) -> bytes:
-    ''' Reads file content and returns it as str '''
-
-    file_content: bytes
-    with open(source_path, 'rb') as source_file:
-        file_content = source_file.read()
-
-    return file_content
 
 
 def sync():
