@@ -3,8 +3,8 @@ import logging
 import os
 from typing import List
 
-from utils.log_utils import setup_logger
 from utils.file_utils import File
+from utils.log_utils import setup_logger
 
 
 def compare_file_content(source_path, replica_path):
@@ -66,10 +66,10 @@ def search_changed_files_in_replica(source_files: List[File], replica_files: Lis
                     is_file_changed = False
 
         if is_file_changed:
-            pass #TODO: remove file with this name from replica
+            pass  # TODO: remove file with this name from replica
 
         if is_file_missing or is_file_changed:
-            pass #TODO: copy file with this name from replica
+            pass  # TODO: copy file with this name from replica
 
 
 def search_deleted_files_in_replica(source_files: List[File], replica_files: List[File]):
@@ -83,7 +83,7 @@ def search_deleted_files_in_replica(source_files: List[File], replica_files: Lis
                 is_file_deleted = False
 
         if is_file_deleted:
-            pass #TODO: Remove file from replica directory
+            pass  # TODO: Remove file from replica directory
 
 
 def sync():
@@ -105,8 +105,8 @@ def parse_arguments():
 if __name__ == '__main__':
     setup_logger()
 
-    source_path = 'C:\\Users\\patrycja.szostak\\Desktop\\PYTHON\\dir_sync\\source\\'
-    replica_path = 'C:\\Users\\patrycja.szostak\\Desktop\\PYTHON\\dir_sync\\replica\\'
+    source_path = 'C:\\Desktop\\PYTHON\\dir_sync\\source\\'
+    replica_path = 'C:\\Desktop\\PYTHON\\dir_sync\\replica\\'
     src_files = get_files_from_dir(source_path)
     rpl_files = get_files_from_dir(replica_path)
 
